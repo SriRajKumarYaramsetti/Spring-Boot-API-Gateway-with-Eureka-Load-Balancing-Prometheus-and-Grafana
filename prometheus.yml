@@ -1,0 +1,13 @@
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: "gateway"
+
+    # metrics_path defaults to '/metrics'
+    metrics_path: '/actuator/prometheus'
+
+
+    # scheme defaults to 'http'.
+    scrape_interval: 1s
+
+    static_configs:
+      - targets: ["localhost:8080"]
